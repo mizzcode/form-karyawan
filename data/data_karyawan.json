@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "nik": "123",
+        "nama": "Misbahudin",
+        "jenisKelamin": "1",
+        "agama": "Islam",
+        "golongan": "I",
+        "gajiPokok": "500000"
+    },
+    {
+        "nik": "321",
+        "nama": "Joko",
+        "jenisKelamin": "1",
+        "agama": "Islam",
+        "golongan": "II",
+        "gajiPokok": "600000"
+    },
+    {
+        "nik": "456",
+        "nama": "Budi",
+        "jenisKelamin": "1",
+        "agama": "Islam",
+        "golongan": "III",
+        "gajiPokok": "700000"
+    }
+]

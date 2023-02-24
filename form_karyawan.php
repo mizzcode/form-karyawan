@@ -5,12 +5,8 @@ sort($listAgama);
 
 $listGolongan = ['I', 'II', 'III'];
 
-// file json
-$fileJson = "data_karyawan.json";
-// $dataKaryawan = array();
-
 // membaca file json
-$dataJson = file_get_contents($fileJson);
+$dataJson = file_get_contents("data/data_karyawan.json");
 // ubah json ke array
 $dataKaryawan = json_decode($dataJson, true);
 
@@ -40,7 +36,7 @@ if (isset($_GET['btnSave'])) {
     $dataToJson = json_encode($dataKaryawan, JSON_PRETTY_PRINT);
 
     // menulis ke file json
-    file_put_contents($fileJson, $dataToJson);
+    file_put_contents("data/data_karyawan.json", $dataToJson);
 }
 
 ?>
