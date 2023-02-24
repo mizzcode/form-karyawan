@@ -13,7 +13,7 @@ Aplikasi Formulir Karyawan Berbasis Web dapat membantu perusahaan dalam mengelol
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 #### Requirement 
 - PHP >= 8.2
-- GIT : (https://git-scm.com/downloads)
+- GIT : https://git-scm.com/downloads
 
 ## Installation
 untuk menjalankan aplikasi form karyawan bisa clone repository agar mendapatkan source code
