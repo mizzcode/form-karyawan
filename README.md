@@ -55,7 +55,7 @@ cara nya :
 
 ## Snapshot atau Gambar 📸
 
-![image](https://user-images.githubusercontent.com/101040281/222379412-fedf519d-5bf7-437e-bc79-38e911d5b61f.png)
+![image](https://user-images.githubusercontent.com/101040281/222387251-f3ee2d2a-4da1-4823-84d5-71a3b75e3702.png)
 
 ## Author :
 

@@ -22,5 +22,21 @@
         "agama": "Islam",
         "golongan": "III",
         "gajiPokok": "519000"
+    },
+    {
+        "nik": "014",
+        "nama": "Dewi",
+        "jenisKelamin": "0",
+        "agama": "Islam",
+        "golongan": "I",
+        "gajiPokok": "201800"
+    },
+    {
+        "nik": "912",
+        "nama": "Jani",
+        "jenisKelamin": "0",
+        "agama": "Hindu",
+        "golongan": "III",
+        "gajiPokok": "491929"
     }
 ]

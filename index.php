@@ -44,12 +44,6 @@ if (isset($_GET['btnSave'])) {
     file_put_contents("data/data_karyawan.json", $dataToJson);
 }
 
-// baca file json
-$dataJson = file_get_contents("data/data_karyawan.json");
-
-// ubah json ke array
-$dataKaryawan = json_decode($dataJson, true);
-
 function hitungTunjangan($golongan)
 {
     if ($golongan == "I") {
@@ -137,10 +131,11 @@ function pajak($gajiPokok, $tunjangan)
                             <tr>
                                 <td>
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" name="jenisKelamin" aria-label="Floating label select example">
+                                        <select class="form-select" name="jenisKelamin"
+                                            aria-label="Floating label select example">
                                             <option selected disabled>Pilih</option>
                                             <option value="1">Laki-Laki</option>
-                                            <option value="2">Perempuan</option>
+                                            <option value="0">Perempuan</option>
                                         </select>
                                         <div class="valid-feedback">
                                             Looks Good!
@@ -153,7 +148,8 @@ function pajak($gajiPokok, $tunjangan)
                             <tr>
                                 <td>
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" name="agama" aria-label="Floating label select example">
+                                        <select class="form-select" name="agama"
+                                            aria-label="Floating label select example">
                                             <?php
 
                                             echo "<option selected disabled>Pilih</option>";
@@ -175,7 +171,8 @@ function pajak($gajiPokok, $tunjangan)
                             <tr>
                                 <td>
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" name="golongan" aria-label="Floating label select example">
+                                        <select class="form-select" name="golongan"
+                                            aria-label="Floating label select example">
                                             <?php
 
                                             echo "<option selected disabled>Pilih</option>";
@@ -199,7 +196,8 @@ function pajak($gajiPokok, $tunjangan)
                                     <div class="input-group input-group-default mb-3">
                                         <span class="input-group-text" id="inputGroup-sizing-default">Gaji
                                             Pokok</span>
-                                        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="gajiPokok" required>
+                                        <input type="number" class="form-control" aria-label="Sizing example input"
+                                            aria-describedby="inputGroup-sizing-default" name="gajiPokok" required>
                                         <div class="invalid-feedback">
                                             You must fill gaji pokok.
                                         </div>
@@ -223,7 +221,8 @@ function pajak($gajiPokok, $tunjangan)
         <div class="container-fluid">
             <div class="row mt-3">
                 <div class="col-md" id="add">
-                    <button class="btn btn-success float-end me-9 mb-5" data-bs-toggle="modal" data-bs-target="#add" name="btnSave">Tambah Data Karyawan</button>
+                    <button class="btn btn-success float-end me-9 mb-5" data-bs-toggle="modal" data-bs-target="#add"
+                        name="btnSave">Tambah Data Karyawan</button>
                 </div>
             </div>
 
@@ -259,18 +258,18 @@ function pajak($gajiPokok, $tunjangan)
                         $generator = $factory->getMediumStrengthGenerator();
                         $token = $generator->generateString(10);
                     ?>
-                        <tr>
-                            <td> <?= $karyawan['nik'] ?> </td>
-                            <td> <?= $karyawan['nama'] ?> </td>
-                            <td> <?= $karyawan['jenisKelamin'] ? "Laki-Laki" : "Perempuan" ?> </td>
-                            <td> <?= $karyawan['agama'] ?> </td>
-                            <td> <?= $karyawan['golongan'] ?> </td>
-                            <td> <?= $karyawan['gajiPokok'] ?> </td>
-                            <td> <?= $tunjangan ?> </td>
-                            <td> <?= $pajak ?> </td>
-                            <td> <?= $gajiBersih ?> </td>
-                            <td> <?= $token ?> </td>
-                        </tr>
+                    <tr>
+                        <td> <?= $karyawan['nik'] ?> </td>
+                        <td> <?= $karyawan['nama'] ?> </td>
+                        <td> <?= $karyawan['jenisKelamin'] ? "Laki-Laki" : "Perempuan" ?> </td>
+                        <td> <?= $karyawan['agama'] ?> </td>
+                        <td> <?= $karyawan['golongan'] ?> </td>
+                        <td> <?= $karyawan['gajiPokok'] ?> </td>
+                        <td> <?= $tunjangan ?> </td>
+                        <td> <?= $pajak ?> </td>
+                        <td> <?= $gajiBersih ?> </td>
+                        <td> <?= $token ?> </td>
+                    </tr>
                     <?php endforeach ?>
                 </tbody>
             </table>
