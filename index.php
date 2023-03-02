@@ -56,7 +56,7 @@ function hitungTunjangan($golongan)
         return 0;
     }
 }
-function pajak($gajiPokok, $tunjangan)
+function hitungPajak($gajiPokok, $tunjangan)
 {
     $pajak = ($gajiPokok + $tunjangan) * 0.05;
     return $pajak;
@@ -250,7 +250,7 @@ function pajak($gajiPokok, $tunjangan)
 
                         $gajiPokok = $karyawan['gajiPokok'];
                         $tunjangan = hitungTunjangan($karyawan['golongan']);
-                        $pajak = pajak($gajiPokok, $tunjangan);
+                        $pajak = hitungPajak($gajiPokok, $tunjangan);
                         $gajiBersih = ($gajiPokok + $tunjangan) - $pajak;
 
                         $factory = new Factory;
