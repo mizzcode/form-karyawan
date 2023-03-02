@@ -5,22 +5,22 @@
         "jenisKelamin": "1",
         "agama": "Islam",
         "golongan": "I",
-        "gajiPokok": "500000"
-    },
-    {
-        "nik": "321",
-        "nama": "Joko",
-        "jenisKelamin": "1",
-        "agama": "Islam",
-        "golongan": "II",
-        "gajiPokok": "600000"
+        "gajiPokok": "1500000"
     },
     {
         "nik": "456",
         "nama": "Budi",
         "jenisKelamin": "1",
         "agama": "Islam",
+        "golongan": "II",
+        "gajiPokok": "500000"
+    },
+    {
+        "nik": "990",
+        "nama": "Joko",
+        "jenisKelamin": "1",
+        "agama": "Islam",
         "golongan": "III",
-        "gajiPokok": "700000"
+        "gajiPokok": "519000"
     }
 ]

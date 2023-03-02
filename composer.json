@@ -1,0 +1,16 @@
+{
+    "name": "misbahudin/form-karyawan",
+    "description": "Aplikasi Form Karyawan",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "ircmaxell/random-lib": "^1.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Misbahudin",
+            "email": "mizzc0d3@gmail.com"
+        }
+    ]
+}
