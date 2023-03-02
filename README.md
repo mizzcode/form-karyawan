@@ -18,11 +18,11 @@ Aplikasi Formulir Karyawan Berbasis Web dapat membantu perusahaan dalam mengelol
 
 #### Requirement
 
-- PHP >= 8.2
+- PHP >= 8
+- GIT : https://git-scm.com/downloads
+- XAMPP : https://www.apachefriends.org/download.html
 
 ## Installation
-
-- GIT : https://git-scm.com/downloads
 
 untuk menjalankan aplikasi form karyawan bisa clone repository agar mendapatkan source code
 
