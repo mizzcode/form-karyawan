@@ -56,8 +56,3 @@ cara nya :
 ## Snapshot atau Gambar 📸
 
 ![image](https://user-images.githubusercontent.com/101040281/222387251-f3ee2d2a-4da1-4823-84d5-71a3b75e3702.png)
-
-## Author :
-
-- Nama : Misbahudin
-- No HP : 081286558895
