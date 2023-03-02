@@ -50,7 +50,7 @@ cara nya :
 
 ![image](https://user-images.githubusercontent.com/101040281/221123221-87d746ab-371f-4fd3-a429-f22bde4058aa.png)
 
-- Tulis di Web Browser : `http://localhost/form-karyawan.php`
+- Tulis di Web Browser : `http://localhost/
 - Selamat! Aplikasi Formulir Karyawan Berhasil di Install dan siap digunakan.
 
 ## Snapshot atau Gambar 📸
