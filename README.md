@@ -9,6 +9,7 @@ Aplikasi Formulir Karyawan Berbasis Web dapat membantu perusahaan dalam mengelol
 - Menghitung Tunjangan Setiap Data Karyawan
 - Menghitung Pajak Setiap Data Karyawan
 - Menghitung Total Gaji Setiap Data Karyawan
+- Membuat Random Token Setiap Karyawan
 
 ## Tech Stack
 
