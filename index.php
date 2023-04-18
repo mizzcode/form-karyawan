@@ -1,5 +1,10 @@
 <?php
+session_start();
 
+if (!isset($_SESSION['login']) && !isset($_SESSION['username'])) {
+    header('Location: auth/login.php');
+    exit();
+}
 require_once __DIR__ . "/vendor/autoload.php";
 
 use RandomLib\Factory;
@@ -131,8 +136,7 @@ function hitungPajak($gajiPokok, $tunjangan)
                             <tr>
                                 <td>
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" name="jenisKelamin"
-                                            aria-label="Floating label select example">
+                                        <select class="form-select" name="jenisKelamin" aria-label="Floating label select example">
                                             <option selected disabled>Pilih</option>
                                             <option value="1">Laki-Laki</option>
                                             <option value="0">Perempuan</option>
@@ -148,8 +152,7 @@ function hitungPajak($gajiPokok, $tunjangan)
                             <tr>
                                 <td>
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" name="agama"
-                                            aria-label="Floating label select example">
+                                        <select class="form-select" name="agama" aria-label="Floating label select example">
                                             <?php
 
                                             echo "<option selected disabled>Pilih</option>";
@@ -171,8 +174,7 @@ function hitungPajak($gajiPokok, $tunjangan)
                             <tr>
                                 <td>
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" name="golongan"
-                                            aria-label="Floating label select example">
+                                        <select class="form-select" name="golongan" aria-label="Floating label select example">
                                             <?php
 
                                             echo "<option selected disabled>Pilih</option>";
@@ -196,8 +198,7 @@ function hitungPajak($gajiPokok, $tunjangan)
                                     <div class="input-group input-group-default mb-3">
                                         <span class="input-group-text" id="inputGroup-sizing-default">Gaji
                                             Pokok</span>
-                                        <input type="number" class="form-control" aria-label="Sizing example input"
-                                            aria-describedby="inputGroup-sizing-default" name="gajiPokok" required>
+                                        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="gajiPokok" required>
                                         <div class="invalid-feedback">
                                             You must fill gaji pokok.
                                         </div>
@@ -221,8 +222,8 @@ function hitungPajak($gajiPokok, $tunjangan)
         <div class="container-fluid">
             <div class="row mt-3">
                 <div class="col-md" id="add">
-                    <button class="btn btn-success float-end me-9 mb-5" data-bs-toggle="modal" data-bs-target="#add"
-                        name="btnSave">Tambah Data Karyawan</button>
+                    <a class="btn btn-danger float-right mb-5" href="auth/logout.php">Log out</a>
+                    <button class="btn btn-success float-end me-9 mb-5" data-bs-toggle="modal" data-bs-target="#add" name="btnSave">Tambah Data Karyawan</button>
                 </div>
             </div>
 
@@ -258,18 +259,18 @@ function hitungPajak($gajiPokok, $tunjangan)
                         $generator = $factory->getMediumStrengthGenerator();
                         $token = $generator->generateString(10);
                     ?>
-                    <tr>
-                        <td> <?= $karyawan['nik'] ?> </td>
-                        <td> <?= $karyawan['nama'] ?> </td>
-                        <td> <?= $karyawan['jenisKelamin'] ? "Laki-Laki" : "Perempuan" ?> </td>
-                        <td> <?= $karyawan['agama'] ?> </td>
-                        <td> <?= $karyawan['golongan'] ?> </td>
-                        <td> <?= $karyawan['gajiPokok'] ?> </td>
-                        <td> <?= $tunjangan ?> </td>
-                        <td> <?= $pajak ?> </td>
-                        <td> <?= $gajiBersih ?> </td>
-                        <td> <?= $token ?> </td>
-                    </tr>
+                        <tr>
+                            <td> <?= $karyawan['nik'] ?> </td>
+                            <td> <?= $karyawan['nama'] ?> </td>
+                            <td> <?= $karyawan['jenisKelamin'] ? "Laki-Laki" : "Perempuan" ?> </td>
+                            <td> <?= $karyawan['agama'] ?> </td>
+                            <td> <?= $karyawan['golongan'] ?> </td>
+                            <td> <?= $karyawan['gajiPokok'] ?> </td>
+                            <td> <?= $tunjangan ?> </td>
+                            <td> <?= $pajak ?> </td>
+                            <td> <?= $gajiBersih ?> </td>
+                            <td> <?= $token ?> </td>
+                        </tr>
                     <?php endforeach ?>
                 </tbody>
             </table>

@@ -38,5 +38,13 @@
         "agama": "Hindu",
         "golongan": "III",
         "gajiPokok": "491929"
+    },
+    {
+        "nik": "10",
+        "nama": "galih",
+        "jenisKelamin": "1",
+        "agama": "Islam",
+        "golongan": "I",
+        "gajiPokok": "50000000"
     }
 ]
