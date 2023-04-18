@@ -11,6 +11,13 @@ Aplikasi Formulir Karyawan Berbasis Web dapat membantu perusahaan dalam mengelol
 - Menghitung Total Gaji Setiap Data Karyawan
 - Membuat Random Token Setiap Karyawan
 
+## Features Authentication
+
+- Login
+- Registrasi
+- Lupa Password
+- Log out
+
 ## Tech Stack
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -55,4 +62,14 @@ cara nya :
 
 ## Snapshot atau Gambar 📸
 
-![image](https://user-images.githubusercontent.com/101040281/222387251-f3ee2d2a-4da1-4823-84d5-71a3b75e3702.png)
+![Screenshot (435)](https://user-images.githubusercontent.com/83481679/232672606-13087694-0741-46d4-b747-c1eba6b6e8e8.png)
+
+![Screenshot (437)](https://user-images.githubusercontent.com/83481679/232672701-58abdec8-8ede-46bf-b794-09ca28e2b9a7.png)
+
+![Screenshot (438)](https://user-images.githubusercontent.com/83481679/232672803-79493ea0-2bb7-4cfa-a245-4de7283cc0be.png)
+
+![Screenshot (439)](https://user-images.githubusercontent.com/83481679/232672825-e2ad0794-a3ed-44e7-9bf9-44f8ae73ecb3.png)
+
+
+
+
