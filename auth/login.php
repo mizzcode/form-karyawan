@@ -68,6 +68,8 @@ if (isset($_SESSION['login'])) {
                     $expire = time() + (2 * 24 * 60 * 60);
                     setcookie('app', hash('sha512', 'app_home'), $expire, '/');
                 }
+                // bebaskan resource database
+                $stmt->closeCursor();
                 // mengarahkan pengguna ke halaman index setelah login berhasil
                 header("Location: ../index.php");
             } else {

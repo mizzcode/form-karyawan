@@ -54,6 +54,7 @@ if (isset($_SESSION['login'])) {
 
         // Jika hasil query menghasilkan lebih dari 0 baris, artinya username sudah ada di database
         if ($stmt_check->fetch()) {
+            $stmt_check->closeCursor();
             echo "<script>
         Swal.fire(
             'GAGAL',
@@ -69,6 +70,7 @@ if (isset($_SESSION['login'])) {
             // Jika proses penyimpanan berhasil, panggil fungsi tutupKoneksi() untuk menutup koneksi ke database, dan redirect ke halaman login.php
             if ($stmt_insert->execute()) {
                 $_SESSION['success'] = true;
+                $stmt_insert->closeCursor();
                 header('Location: login.php');
             }
         }
