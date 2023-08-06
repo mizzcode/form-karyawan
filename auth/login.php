@@ -49,15 +49,10 @@ if (isset($_SESSION['login'])) {
 
         // membuat prepared statement untuk mengambil data pengguna dari tabel database
         $stmt = $conn->prepare("SELECT * FROM tbl_auth WHERE username = ?");
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $stmt->execute([$username]);
 
         // memeriksa apakah username tersedia pada database
-        if ($result->num_rows > 0) {
-
-            // mengambil data pengguna dari tabel database
-            $row = $result->fetch_assoc();
+        if ($row = $stmt->fetch()) {
 
             // memeriksa apakah password yang dimasukkan sesuai dengan password di database
             if (password_verify($password, $row['password'])) {
@@ -73,36 +68,24 @@ if (isset($_SESSION['login'])) {
                     $expire = time() + (2 * 24 * 60 * 60);
                     setcookie('app', hash('sha512', 'app_home'), $expire, '/');
                 }
-
-                // tutup koneksi database
-                tutupKoneksi($stmt, $conn);
-
                 // mengarahkan pengguna ke halaman index setelah login berhasil
                 header("Location: ../index.php");
             } else {
-
-                // tutup koneksi database
-                tutupKoneksi($stmt, $conn);
-
                 // menampilkan pesan error jika password yang dimasukkan salah
                 echo "<script>
             Swal.fire(
                 'GAGAL',
-                'Password yang Anda masukkan salah.',
+                'Username atau Password yang Anda masukkan salah.',
                 'error'
             )
             </script>";
             }
         } else {
-
-            // tutup koneksi database
-            tutupKoneksi($stmt, $conn);
-
             // menampilkan pesan error jika username tidak ditemukan
             echo "<script>
             Swal.fire(
                 'GAGAL',
-                'Login gagal. Username tidak di temukan.',
+                'Username atau Password yang Anda masukkan salah.',
                 'error'
             )
             </script>";

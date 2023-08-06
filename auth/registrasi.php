@@ -50,14 +50,10 @@ if (isset($_SESSION['login'])) {
         // Query untuk mencari apakah username sudah ada di database
         $sql = "SELECT username FROM tbl_auth WHERE username = ?";
         $stmt_check = $conn->prepare($sql);
-        $stmt_check->bind_param("s", $username);
-        $stmt_check->execute();
-        $result = $stmt_check->get_result();
+        $stmt_check->execute([$username]);
 
         // Jika hasil query menghasilkan lebih dari 0 baris, artinya username sudah ada di database
-        if ($result->num_rows > 0) {
-            // Panggil fungsi tutupKoneksi() untuk menutup koneksi ke database, dan tampilkan pesan error dengan menggunakan library Swal
-            tutupKoneksi($stmt_check, $conn);
+        if ($stmt_check->fetch()) {
             echo "<script>
         Swal.fire(
             'GAGAL',
@@ -68,11 +64,10 @@ if (isset($_SESSION['login'])) {
         } else {
             // Jika username belum ada di database, lakukan proses penyimpanan data registrasi ke database
             $stmt_insert = $conn->prepare("INSERT INTO tbl_auth (username, password) VALUES (?, ?)");
-            $stmt_insert->bind_param("ss", $username, $password_hash);
+            $stmt_insert->execute([$username, $password_hash]);
 
             // Jika proses penyimpanan berhasil, panggil fungsi tutupKoneksi() untuk menutup koneksi ke database, dan redirect ke halaman login.php
             if ($stmt_insert->execute()) {
-                tutupKoneksi($stmt_insert, $conn);
                 $_SESSION['success'] = true;
                 header('Location: login.php');
             }

@@ -51,18 +51,14 @@ if (isset($_SESSION['login'])) {
 
         // persiapkan statement untuk mengecek apakah username sudah ada
         $stmt_check = $conn->prepare("SELECT username FROM tbl_auth WHERE username = ?");
-        $stmt_check->bind_param('s', $username);
-        $stmt_check->execute();
-        $result = $stmt_check->get_result();
+        $stmt_check->execute([$username]);
 
         // persiapkan statement untuk melakukan update username dan password
         $stmt_update = $conn->prepare("UPDATE tbl_auth SET username = ?, password = ? WHERE username = ?");
-        $stmt_update->bind_param("sss", $username, $password_hash, $username);
+        $stmt_update->execute([$username, $password_hash, $username]);
 
         // cek apakah username tidak ada di database
-        if ($result->num_rows != 1) {
-            // panggil fungsi tutupKoneksi dan tampilkan pesan gagal menggunakan SweetAlert
-            tutupKoneksi($stmt_check, $conn);
+        if (!$stmt_check->fetch()) {
             echo "<script>
         Swal.fire(
             'GAGAL',
@@ -81,10 +77,11 @@ if (isset($_SESSION['login'])) {
         </script>";
         } else if ($stmt_update->execute()) {
             // panggil fungsi tutupKoneksi, set session success_change, dan redirect ke halaman login jika query update berhasil
-            tutupKoneksi($stmt_update, $conn);
             $_SESSION['success_change'] = true;
             header('Location: login.php');
         }
+        $stmt_check->closeCursor();
+        $stmt_update->closeCursor();
     }
     ?>
     <!-- </Akhir php script -->
